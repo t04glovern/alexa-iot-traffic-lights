@@ -1,0 +1,35 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "traffic light changer",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "LightChangeIntent",
+          "slots": [
+            {
+              "name": "LightColor",
+              "type": "AMAZON.Color"
+            }
+          ],
+          "samples": [
+            "change the light color to {LightColor}",
+            "set lights to {LightColor}",
+            "{LightColor}"
+          ]
+        }
+      ]
+    }
+  }
+}

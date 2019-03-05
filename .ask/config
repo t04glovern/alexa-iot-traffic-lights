@@ -1,0 +1,33 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.6bedf047-66c7-43b7-857b-616d6bf9617d",
+      "was_cloned": false,
+      "merge": {},
+      "resources": {
+        "manifest": {
+          "eTag": "b8018512b4206b06b8597e1a72b681cc"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "88a431398179b9033f2624158bdc49b2"
+          }
+        },
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:277790246569:function:ask-custom-alexa-iot-traffic-lights-default",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/custom",
+            "functionName": "ask-custom-alexa-iot-traffic-lights-default",
+            "handler": "index.handler",
+            "revisionId": "6f88876c-740b-4248-a056-e5d9dd3baada",
+            "runtime": "nodejs8.10"
+          }
+        ]
+      }
+    }
+  }
+}
