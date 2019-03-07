@@ -1,25 +1,37 @@
 "use strict";
 
+const utils = require("../utils");
+
 module.exports = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
       handlerInput.requestEnvelope.request.intent.name === 'LightChangeIntent';
   },
   handle(handlerInput) {
-    const event = handlerInput.requestEnvelope;
-    const res = require("../resources")(event.request.locale);
-    const color = getLightColor(event);
+    return new Promise((resolve, reject) => {
+      const event = handlerInput.requestEnvelope;
+      const res = require("../resources")(event.request.locale);
+      const color = getLightColor(event);
 
-    let speechText;
-    let reprompt;
+      let speechText;
+      let reprompt;
 
-    speechText = res.strings.COLOR_NOT_FOUND.replace("{0}", color);
-    reprompt = res.strings.COLOR_CHANGE.replace("{0}", color);
+      reprompt = res.strings.COLOR_CHANGE.replace("{0}", color);
 
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .reprompt(reprompt)
-      .getResponse();
+      utils.changeLightColor(color, response => {
+        if (!response) {
+          speechText = res.strings.COLOR_NOT_FOUND.replace("{0}", color);
+        } else {
+          speechText = res.strings.COLOR_CHANGED.replace("{0}", color);
+        }
+
+        const responseHandle = handlerInput.responseBuilder
+          .speak(speechText)
+          .reprompt(reprompt)
+          .getResponse();
+        resolve(responseHandle);
+      })
+    });
   }
 }
 

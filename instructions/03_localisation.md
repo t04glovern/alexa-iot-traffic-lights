@@ -10,7 +10,8 @@ const resources = {
     translation: {
       // intents/LightChange.js
       'COLOR_NOT_FOUND': 'No light color {0} was found.',
-      'COLOR_CHANGE': 'Want to change the color of the lights? Say: Change lights to {0}',
+      'COLOR_CHANGED': 'Color changed to {0}.',
+      'COLOR_CHANGE': 'Want to change the color of the lights? Say: set lights to {0}',
       // intents/base/Help.js
       'HELP_FALLBACK': 'I wasn\'t able to understand your previous command.',
       'HELP_REPROMPT': 'Want to change the lights? say Change Lights',
@@ -142,7 +143,7 @@ module.exports = {
     let speechText;
     let reprompt;
 
-    speechText = res.strings.COLOR_NOT_FOUND.replace("{0}", "Red");
+    speechText = res.strings.COLOR_CHANGED.replace("{0}", "Red");
     reprompt = res.strings.COLOR_CHANGE.replace("{0}", "Red");
 
     return handlerInput.responseBuilder

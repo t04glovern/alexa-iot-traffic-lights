@@ -1,0 +1,27 @@
+service: aws-iot-api
+
+provider:
+  name: aws
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "iot:Publish"
+      Resource:
+        Fn::Join:
+          - ":"
+          - - "arn:aws:iot"
+            - Ref: "AWS::Region"
+            - Ref: "AWS::AccountId"
+            - "topic/devopstar/alexa/esp8266-group"
+  runtime: nodejs8.10
+  environment:
+    IOT_ENDPOINT: xxxxxxxxxxxx.iot.us-east-1.amazonaws.com
+    IOT_TOPIC: devopstar/alexa/esp8266-group
+
+functions:
+  lights:
+    handler: handler.lights
+    events:
+      - http:
+          path: lights
+          method: post

@@ -114,7 +114,7 @@ Your response will say it can't find blue, however that actually means its worke
       "reprompt": {
         "outputSpeech": {
           "type": "SSML",
-          "ssml": "<speak>Want to change the color of the lights? Say: Change lights to blue</speak>"
+          "ssml": "<speak>Want to change the color of the lights? Say: set lights to blue</speak>"
         }
       },
       "shouldEndSession": false,

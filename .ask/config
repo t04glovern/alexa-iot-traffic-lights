@@ -23,7 +23,7 @@
             "codeUri": "lambda/custom",
             "functionName": "ask-custom-alexa-iot-traffic-lights-default",
             "handler": "index.handler",
-            "revisionId": "6f88876c-740b-4248-a056-e5d9dd3baada",
+            "revisionId": "062bba22-ea33-4feb-ac57-d273c81513c5",
             "runtime": "nodejs8.10"
           }
         ]

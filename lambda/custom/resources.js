@@ -7,6 +7,7 @@ const resources = {
     translation: {
       // intents/LightChange.js
       'COLOR_NOT_FOUND': 'No light color {0} was found.',
+      'COLOR_CHANGED': 'Color changed to {0}.',
       'COLOR_CHANGE': 'Want to change the color of the lights? Say: Change lights to {0}',
       // intents/base/Help.js
       'HELP_FALLBACK': 'I wasn\'t able to understand your previous command.',
