@@ -1,8 +1,16 @@
 # Alexa IoT Traffic Lights
 
-This is an example Alexa skill that can be used to control a device over AWS IoT
+Amazon Alexa controller for AWS IoT connected devices. Learn how to safely expose an embedded ESP8266 over MQTT in order to control an RGB LED.
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/3EQq29-zVWU/0.jpg)](http://www.youtube.com/watch?v=3EQq29-zVWU "Video Title")
+
+## Architecture
+
+![Architecture](instructions/alexa-controlled-iot-architecture.png)
+
+## Circuit
+
+![Circuit](instructions/circuit-diagram_bb.png)
 
 ## Instructions
 
